@@ -167,11 +167,13 @@
 
 .hero-copy h1 {
   margin: 0;
-  font-size: clamp(4.35rem, 8vw, 6.9rem);
+  font-size: clamp(3.8rem, 6.4vw, 5.65rem);
   font-weight: 950;
   letter-spacing: -0.05em;
   line-height: 0.92;
   text-transform: uppercase;
+  overflow-wrap: normal;
+  word-break: normal;
 }
 
 .hero-copy > span {
@@ -356,7 +358,7 @@
 }
 
 .worship-grid {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: var(--card-gap);
 }
 
@@ -446,6 +448,7 @@
   font-weight: 950;
   line-height: 1.05;
   text-transform: uppercase;
+  overflow-wrap: anywhere;
 }
 
 .image-card strong {
@@ -786,7 +789,7 @@
 .play-icon {
   position: absolute;
   z-index: 2;
-  top: 38px;
+  top: clamp(24px, 22%, 42px);
   left: 50%;
   display: grid;
   place-items: center;
@@ -1077,6 +1080,54 @@
   height: auto;
 }
 
+@media (max-width: 1100px) {
+  .page {
+    --page-x: 24px;
+  }
+
+  .site-header {
+    grid-template-columns: 1fr auto;
+    gap: 20px;
+  }
+
+  .main-nav {
+    display: none;
+  }
+
+  .logo img {
+    width: clamp(220px, 28vw, 300px);
+  }
+
+  .hero-block {
+    min-height: 610px;
+    padding-top: 214px;
+  }
+
+  .hero-copy p {
+    font-size: clamp(2.35rem, 5vw, 3.4rem);
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(3.45rem, 7vw, 4.75rem);
+  }
+
+  .shortcut {
+    padding-inline: 18px;
+  }
+
+  .shortcut strong {
+    font-size: 0.88rem;
+  }
+
+  .shortcut small {
+    font-size: 0.8rem;
+  }
+
+  .instagram-strip {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
 @media (max-width: 920px) {
   .page {
     --page-x: 20px;
@@ -1149,10 +1200,6 @@
     gap: 16px;
   }
 
-  .logo strong {
-    font-size: 2.5rem;
-  }
-
   .logo img {
     width: clamp(174px, 58vw, 210px);
   }
@@ -1162,12 +1209,24 @@
   }
 
   .hero-block {
-    min-height: 620px;
-    padding-inline: 24px;
+    min-height: 560px;
+    padding: 190px 20px 72px;
   }
 
   .hero-copy p {
-    font-size: 2rem;
+    gap: 8px;
+    margin-bottom: 12px;
+    font-size: clamp(1.55rem, 9vw, 2rem);
+    letter-spacing: 0.18em;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(2.5rem, 12.5vw, 3.2rem);
+    letter-spacing: -0.06em;
+  }
+
+  .hero-buttons {
+    margin-top: 26px;
   }
 
   .hero-buttons,
@@ -1188,6 +1247,53 @@
     grid-template-columns: 1fr;
   }
 
+  .section-title,
+  .side-heading {
+    margin-bottom: 18px;
+  }
+
+  .section-title h2,
+  .side-heading h2 {
+    font-size: 1.06rem;
+    letter-spacing: 0.18em;
+    line-height: 1.25;
+  }
+
+  .side-heading h2 span {
+    display: block;
+    margin-top: 4px;
+    font-size: 0.82rem;
+  }
+
+  .image-card {
+    min-height: 220px;
+  }
+
+  .event-card {
+    min-height: 260px;
+  }
+
+  .about-copy h2 {
+    font-size: clamp(1.55rem, 8vw, 2rem);
+  }
+
+  .about-copy p {
+    margin-bottom: 0;
+  }
+
+  .connect-banner {
+    min-height: auto;
+  }
+
+  .connect-copy {
+    padding: 24px;
+  }
+
+  .connect-copy h2 {
+    font-size: 1.18rem;
+    line-height: 1.2;
+  }
+
   .footer {
     grid-template-columns: 1fr;
     padding: 28px 20px 44px;
@@ -1204,6 +1310,18 @@
   .footer-brand p {
     margin-top: 16px;
     margin-bottom: 18px;
+  }
+
+  .footer .logo img {
+    width: min(220px, 100%);
+  }
+
+  .footer-credit {
+    margin-top: 34px;
+  }
+
+  .footer-credit img {
+    width: min(170px, 100%);
   }
 
   .shortcut + .shortcut {
