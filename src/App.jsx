@@ -11,10 +11,12 @@ import {
   UsersRound,
   X,
 } from 'lucide-react'
+import aboutVideoThumb from './assets/about-video-thumb.jpg'
 import churchLogo from './assets/cbr-barao-logo.svg'
 import congressoFamiliasImage from './assets/congresso-familias.jpg'
 import incendeiaImage from './assets/incendeia-2026.jpg'
 import heroImage from './assets/worship-service.jpg'
+import revoLogo from './assets/revo-tecnologia-logo.png'
 import instagramPost1 from './assets/instagram-post-1.jpg'
 import instagramPost2 from './assets/instagram-post-2.jpg'
 import instagramPost3 from './assets/instagram-post-3.jpg'
@@ -264,7 +266,18 @@ function App() {
 
           <section className="about-block" id="sobre">
             <div className="about-photo">
-              <img src={heroImage} alt="" />
+              <video
+                controls
+                playsInline
+                poster={aboutVideoThumb}
+                preload="metadata"
+                onLoadedMetadata={(event) => {
+                  event.currentTarget.muted = false
+                  event.currentTarget.volume = 1
+                }}
+              >
+                <source src="/about-cbr-video.mp4?v=audio-20260711" type="video/mp4" />
+              </video>
             </div>
             <div className="about-copy">
               <span>Sobre nós</span>
@@ -273,7 +286,6 @@ function App() {
                 Aqui, você encontra aceitação, propósito e um lugar para crescer. Juntos,
                 seguimos Jesus e fazemos a diferença.
               </p>
-              <a className="outline-button" href="#sobre">Conheça nossa história</a>
             </div>
           </section>
         </section>
@@ -390,9 +402,12 @@ function App() {
             <div className="footer-column">
               <strong>Contato</strong>
               <span>(91) 98497-1018</span>
-              <span>cbrbelem@gmail.com</span>
               <span>Tv. Barão do triunfo, 3683</span>
               <span>Marco, Belém - PA</span>
+              <div className="footer-credit">
+                <span>Desenvolvido por:</span>
+                <img src={revoLogo} alt="Revo Tecnologia" />
+              </div>
             </div>
 
             <div className="footer-bottom">
