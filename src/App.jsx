@@ -50,7 +50,7 @@ const eventCards = [
     text: 'Pequenos jogadores, grandes campeões em Cristo.',
     image: ebfImage,
     tone: 'kids-event',
-    href: 'https://www.instagram.com/p/DaKtZK4Fmhw/',
+    href: 'https://wa.me/5591984971018',
   },
   {
     title: 'Congresso de famílias',
@@ -58,7 +58,7 @@ const eventCards = [
     text: 'Uma família restaurando famílias.',
     image: congressoFamiliasImage,
     tone: 'family-event',
-    href: 'https://www.instagram.com/reel/DZJKACMBlCe/',
+    href: 'https://wa.me/5591984971018',
   },
   {
     title: 'Incendeia 2026',
@@ -66,7 +66,7 @@ const eventCards = [
     text: 'Uma geração fervorosa servindo ao Senhor.',
     image: incendeiaImage,
     tone: 'fire-event',
-    href: 'https://www.instagram.com/p/DVFDl6gj4UJ/',
+    href: 'https://wa.me/5591984971018',
   },
 ]
 
