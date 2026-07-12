@@ -39,7 +39,7 @@ const shortcuts = [
 ]
 
 const worshipCards = [
-  { title: 'Culto da família', info: 'Domingo • 18h30', text: 'Presencial e Online', tone: 'violet' },
+  { title: 'Culto da família', info: 'Domingo • 18h00', text: 'Presencial e Online', tone: 'violet' },
   { title: 'Quarta profética', info: 'Quarta • 19h30', text: 'Presencial', tone: 'rose' },
 ]
 
