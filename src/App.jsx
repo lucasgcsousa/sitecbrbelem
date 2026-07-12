@@ -185,7 +185,7 @@ function App() {
               ))}
             </nav>
 
-            <a className="outline-pill" href="https://api.whatsapp.com/message/WZLSCBULAVJOH1?autoload=1&app_absent=0">
+            <a className="outline-pill" href="https://wa.me/5591984971018">
               Fale conosco
               <MessageCircle size={16} />
             </a>
@@ -372,7 +372,7 @@ function App() {
               <h2>Precisa de oração ou quer falar conosco?</h2>
               <p>Estamos aqui por você!</p>
             </div>
-            <a href="https://api.whatsapp.com/message/WZLSCBULAVJOH1?autoload=1&app_absent=0" target="_blank" rel="noreferrer">
+            <a href="https://wa.me/5591984971018" target="_blank" rel="noreferrer">
               <MessageCircle size={17} />
               Chamar no WhatsApp
             </a>
@@ -385,7 +385,7 @@ function App() {
               <div className="social-row">
                 <a href="https://www.instagram.com/cbr_belem/" aria-label="Instagram" target="_blank" rel="noreferrer"><Camera size={17} /></a>
                 <a href="https://www.youtube.com/@cbrbarao3012" aria-label="YouTube" target="_blank" rel="noreferrer"><Play size={17} /></a>
-                <a href="https://api.whatsapp.com/message/WZLSCBULAVJOH1?autoload=1&app_absent=0" aria-label="WhatsApp" target="_blank" rel="noreferrer"><MessageCircle size={17} /></a>
+                <a href="https://wa.me/5591984971018" aria-label="WhatsApp" target="_blank" rel="noreferrer"><MessageCircle size={17} /></a>
               </div>
             </div>
 
