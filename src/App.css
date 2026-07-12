@@ -1192,8 +1192,16 @@
 
   .outline-pill {
     width: 46px;
+    min-width: 46px;
+    height: 46px;
+    min-height: 46px;
+    gap: 0;
     padding: 0;
     font-size: 0;
+  }
+
+  .outline-pill svg {
+    flex: 0 0 auto;
   }
 
   .site-header {
