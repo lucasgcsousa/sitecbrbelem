@@ -7,7 +7,6 @@ import {
   MapPin,
   MessageCircle,
   Play,
-  Radio,
   UsersRound,
   X,
 } from 'lucide-react'
@@ -76,6 +75,23 @@ const connectItems = [
   { icon: CircleUserRound, title: 'Jovens', text: 'Um lugar para ser você e ir além' },
   { icon: MapPin, title: 'Kids', text: 'Diversão e ensino para os pequenos' },
 ]
+
+const emptyProfessionalForm = {
+  title: '',
+  description: '',
+  whatsapp: '',
+  owner: '',
+}
+
+function getWhatsappUrl(whatsapp) {
+  const digits = whatsapp.replace(/\D/g, '')
+
+  if (!digits) {
+    return '#'
+  }
+
+  return `https://wa.me/${digits.startsWith('55') ? digits : `55${digits}`}`
+}
 
 const youtubeMessages = [
   {
@@ -169,6 +185,41 @@ function ImageCard({ children, className = '', image = heroImage }) {
 
 function App() {
   const [isGenerosityOpen, setIsGenerosityOpen] = useState(false)
+  const [isEntrepreneursOpen, setIsEntrepreneursOpen] = useState(false)
+  const [isProfessionalFormOpen, setIsProfessionalFormOpen] = useState(false)
+  const [professionals, setProfessionals] = useState([])
+  const [professionalForm, setProfessionalForm] = useState(emptyProfessionalForm)
+
+  function handleProfessionalFormChange(event) {
+    const { name, value } = event.target
+
+    setProfessionalForm((currentForm) => ({
+      ...currentForm,
+      [name]: value,
+    }))
+  }
+
+  function handleProfessionalFormSubmit(event) {
+    event.preventDefault()
+
+    const newProfessional = {
+      id: `professional-${Date.now()}`,
+      title: professionalForm.title.trim(),
+      description: professionalForm.description.trim(),
+      whatsapp: professionalForm.whatsapp.trim(),
+      whatsappUrl: getWhatsappUrl(professionalForm.whatsapp),
+      owner: professionalForm.owner.trim(),
+    }
+
+    if (!newProfessional.title || !newProfessional.description || !newProfessional.whatsapp || !newProfessional.owner) {
+      return
+    }
+
+    setProfessionals((currentProfessionals) => [newProfessional, ...currentProfessionals])
+    setProfessionalForm(emptyProfessionalForm)
+    setIsProfessionalFormOpen(false)
+    setIsEntrepreneursOpen(true)
+  }
 
   return (
     <div className="page" id="inicio">
@@ -208,7 +259,7 @@ function App() {
                 </a>
                 <a className="ghost-button" href="https://www.youtube.com/@cbrbarao3012">
                   Assista ao vivo
-                  <Radio size={16} />
+                  <Play size={16} fill="currentColor" />
                 </a>
               </div>
             </div>
@@ -242,6 +293,32 @@ function App() {
                 </a>
               )
             })}
+          </section>
+
+          <section className="kingdom-section" id="empreendedores">
+            <div className="kingdom-copy">
+              <span>Empreendedores do Reino</span>
+              <h2>Profissionais da nossa casa</h2>
+              <p>
+                Conheça membros da CBR Barão que oferecem serviços profissionais e fortaleça negócios da nossa comunidade.
+              </p>
+            </div>
+            <div className="kingdom-actions">
+              <button className="solid-button" type="button" onClick={() => setIsEntrepreneursOpen(true)} aria-haspopup="dialog" aria-expanded={isEntrepreneursOpen}>
+                Ver profissionais
+                <HeartHandshake size={16} />
+              </button>
+              <a
+                className="kingdom-form-link"
+                href="#cadastro-profissional"
+                onClick={(event) => {
+                  event.preventDefault()
+                  setIsProfessionalFormOpen(true)
+                }}
+              >
+                Sou um profissional do reino
+              </a>
+            </div>
           </section>
 
           <section className="section-block" id="cultos">
@@ -395,7 +472,7 @@ function App() {
               <a href="#cultos">Cultos</a>
               <a href="#conexoes">Conexões</a>
               <a href="#eventos">Eventos</a>
-              <a href="#midias">Mídias</a>
+              <a href="#midias">Midias</a>
               <a href="#contato">Contato</a>
             </nav>
 
@@ -433,6 +510,122 @@ function App() {
             <div className="pdf-image-wrap">
               <img src="/generosidade-render.png" alt="Exerça sua generosidade" />
             </div>
+          </div>
+        </div>
+      )}
+
+      {isEntrepreneursOpen && (
+        <div className="pdf-modal kingdom-modal" role="dialog" aria-modal="true" aria-label="Empreendedores do Reino" onClick={() => setIsEntrepreneursOpen(false)}>
+          <div className="pdf-modal-panel" onClick={(event) => event.stopPropagation()}>
+            <div className="pdf-modal-header">
+              <div>
+                <span>Empreendedores</span>
+                <h2>Empreendedores do Reino</h2>
+              </div>
+              <button type="button" onClick={() => setIsEntrepreneursOpen(false)} aria-label="Fechar popup">
+                <X size={20} />
+              </button>
+            </div>
+
+            <div className="kingdom-modal-body">
+              {professionals.length === 0 ? (
+                <p className="professional-empty">Nenhum profissional cadastrado ainda.</p>
+              ) : (
+                <div className="professional-grid">
+                  {professionals.map((professional) => (
+                    <article className="professional-card" key={professional.id}>
+                      <h3>{professional.title}</h3>
+                      <p>{professional.description}</p>
+                      <div className="professional-meta">
+                        <span>Responsável</span>
+                        <strong>{professional.owner}</strong>
+                      </div>
+                      <a
+                        className="professional-whatsapp"
+                        href={professional.whatsappUrl}
+                        onClick={professional.whatsappUrl === '#' ? (event) => event.preventDefault() : undefined}
+                        target={professional.whatsappUrl === '#' ? undefined : '_blank'}
+                        rel={professional.whatsappUrl === '#' ? undefined : 'noreferrer'}
+                      >
+                        <MessageCircle size={16} />
+                        {professional.whatsapp}
+                      </a>
+                    </article>
+                  ))}
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
+
+      {isProfessionalFormOpen && (
+        <div className="pdf-modal professional-form-modal" role="dialog" aria-modal="true" aria-label="Cadastro de profissional do reino" onClick={() => setIsProfessionalFormOpen(false)}>
+          <div className="pdf-modal-panel professional-form-panel" onClick={(event) => event.stopPropagation()}>
+            <div className="pdf-modal-header">
+              <div>
+                <span>Cadastro</span>
+                <h2>Sou um profissional do reino</h2>
+              </div>
+              <button type="button" onClick={() => setIsProfessionalFormOpen(false)} aria-label="Fechar popup">
+                <X size={20} />
+              </button>
+            </div>
+
+            <form className="professional-form" id="cadastro-profissional" onSubmit={handleProfessionalFormSubmit}>
+              <label>
+                Título do serviço
+                <input
+                  name="title"
+                  type="text"
+                  value={professionalForm.title}
+                  onChange={handleProfessionalFormChange}
+                  placeholder="Ex.: Fotografia, advocacia, confeitaria"
+                  required
+                />
+              </label>
+
+              <label>
+                Pequena descrição
+                <textarea
+                  name="description"
+                  value={professionalForm.description}
+                  onChange={handleProfessionalFormChange}
+                  placeholder="Conte em poucas palavras quais serviços você oferece"
+                  maxLength={180}
+                  required
+                />
+              </label>
+
+              <label>
+                WhatsApp
+                <input
+                  name="whatsapp"
+                  type="tel"
+                  value={professionalForm.whatsapp}
+                  onChange={handleProfessionalFormChange}
+                  placeholder="(91) 99999-9999"
+                  required
+                />
+              </label>
+
+              <label>
+                Nome do responsável
+                <input
+                  name="owner"
+                  type="text"
+                  value={professionalForm.owner}
+                  onChange={handleProfessionalFormChange}
+                  placeholder="Seu nome"
+                  required
+                />
+              </label>
+
+              <button className="solid-button" type="submit">
+                Enviar cadastro
+                <HeartHandshake size={16} />
+              </button>
+            </form>
           </div>
         </div>
       )}
