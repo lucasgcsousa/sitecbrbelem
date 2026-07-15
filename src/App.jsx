@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import {
   CalendarDays,
   Camera,
@@ -26,6 +26,7 @@ import youtubeMessage1 from './assets/youtube-message-1.jpg'
 import youtubeMessage2 from './assets/youtube-message-2.jpg'
 import youtubeMessage3 from './assets/youtube-message-3.jpg'
 import youtubeMessage4 from './assets/youtube-message-4.jpg'
+import { isSupabaseConfigured, supabase } from './supabaseClient'
 import './App.css'
 
 const navItems = ['Sobre', 'Cultos', 'Conexões', 'Eventos', 'Mídias', 'Contato']
@@ -83,6 +84,22 @@ const emptyProfessionalForm = {
   owner: '',
 }
 
+const professionalsStorageKey = 'cbr-kingdom-professionals'
+
+function getStoredProfessionals() {
+  if (typeof window === 'undefined') {
+    return []
+  }
+
+  try {
+    const storedProfessionals = JSON.parse(window.localStorage.getItem(professionalsStorageKey) ?? '[]')
+
+    return Array.isArray(storedProfessionals) ? storedProfessionals : []
+  } catch {
+    return []
+  }
+}
+
 function getWhatsappUrl(whatsapp) {
   const digits = whatsapp.replace(/\D/g, '')
 
@@ -91,6 +108,17 @@ function getWhatsappUrl(whatsapp) {
   }
 
   return `https://wa.me/${digits.startsWith('55') ? digits : `55${digits}`}`
+}
+
+function mapSupabaseProfessional(professional) {
+  return {
+    id: professional.id,
+    title: professional.title,
+    description: professional.description,
+    whatsapp: professional.whatsapp,
+    whatsappUrl: professional.whatsapp_url ?? getWhatsappUrl(professional.whatsapp),
+    owner: professional.owner,
+  }
 }
 
 const youtubeMessages = [
@@ -187,8 +215,50 @@ function App() {
   const [isGenerosityOpen, setIsGenerosityOpen] = useState(false)
   const [isEntrepreneursOpen, setIsEntrepreneursOpen] = useState(false)
   const [isProfessionalFormOpen, setIsProfessionalFormOpen] = useState(false)
-  const [professionals, setProfessionals] = useState([])
+  const [professionals, setProfessionals] = useState(() => (isSupabaseConfigured ? [] : getStoredProfessionals()))
   const [professionalForm, setProfessionalForm] = useState(emptyProfessionalForm)
+  const [professionalFormError, setProfessionalFormError] = useState('')
+  const [professionalsLoadError, setProfessionalsLoadError] = useState('')
+  const [isSubmittingProfessional, setIsSubmittingProfessional] = useState(false)
+
+  useEffect(() => {
+    if (!isSupabaseConfigured || !supabase) {
+      return undefined
+    }
+
+    let isMounted = true
+
+    async function loadProfessionals() {
+      const { data, error } = await supabase
+        .from('kingdom_professionals')
+        .select('id,title,description,whatsapp,whatsapp_url,owner,created_at')
+        .order('created_at', { ascending: false })
+
+      if (!isMounted) {
+        return
+      }
+
+      if (error) {
+        setProfessionalsLoadError('Não foi possível carregar os profissionais cadastrados.')
+        return
+      }
+
+      setProfessionals(data.map(mapSupabaseProfessional))
+      setProfessionalsLoadError('')
+    }
+
+    loadProfessionals()
+
+    return () => {
+      isMounted = false
+    }
+  }, [])
+
+  useEffect(() => {
+    if (!isSupabaseConfigured) {
+      window.localStorage.setItem(professionalsStorageKey, JSON.stringify(professionals))
+    }
+  }, [professionals])
 
   function handleProfessionalFormChange(event) {
     const { name, value } = event.target
@@ -199,8 +269,9 @@ function App() {
     }))
   }
 
-  function handleProfessionalFormSubmit(event) {
+  async function handleProfessionalFormSubmit(event) {
     event.preventDefault()
+    setProfessionalFormError('')
 
     const newProfessional = {
       id: `professional-${Date.now()}`,
@@ -215,7 +286,34 @@ function App() {
       return
     }
 
-    setProfessionals((currentProfessionals) => [newProfessional, ...currentProfessionals])
+    let savedProfessional = newProfessional
+
+    if (isSupabaseConfigured && supabase) {
+      setIsSubmittingProfessional(true)
+
+      const { data, error } = await supabase
+        .from('kingdom_professionals')
+        .insert({
+          title: newProfessional.title,
+          description: newProfessional.description,
+          whatsapp: newProfessional.whatsapp,
+          whatsapp_url: newProfessional.whatsappUrl,
+          owner: newProfessional.owner,
+        })
+        .select('id,title,description,whatsapp,whatsapp_url,owner,created_at')
+        .single()
+
+      setIsSubmittingProfessional(false)
+
+      if (error) {
+        setProfessionalFormError('Não foi possível enviar seu cadastro. Tente novamente em instantes.')
+        return
+      }
+
+      savedProfessional = mapSupabaseProfessional(data)
+    }
+
+    setProfessionals((currentProfessionals) => [savedProfessional, ...currentProfessionals])
     setProfessionalForm(emptyProfessionalForm)
     setIsProfessionalFormOpen(false)
     setIsEntrepreneursOpen(true)
@@ -528,7 +626,9 @@ function App() {
             </div>
 
             <div className="kingdom-modal-body">
-              {professionals.length === 0 ? (
+              {professionalsLoadError ? (
+                <p className="professional-empty">{professionalsLoadError}</p>
+              ) : professionals.length === 0 ? (
                 <p className="professional-empty">Nenhum profissional cadastrado ainda.</p>
               ) : (
                 <div className="professional-grid">
@@ -621,8 +721,12 @@ function App() {
                 />
               </label>
 
-              <button className="solid-button" type="submit">
-                Enviar cadastro
+              {professionalFormError && (
+                <p className="professional-form-error">{professionalFormError}</p>
+              )}
+
+              <button className="solid-button" type="submit" disabled={isSubmittingProfessional}>
+                {isSubmittingProfessional ? 'Enviando...' : 'Enviar cadastro'}
                 <HeartHandshake size={16} />
               </button>
             </form>

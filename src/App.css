@@ -219,6 +219,12 @@
   transform: translateY(-2px);
 }
 
+.solid-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.72;
+  transform: none;
+}
+
 .solid-button {
   gap: 10px;
   padding: 0 28px;
@@ -1312,6 +1318,14 @@
 .professional-form input::placeholder,
 .professional-form textarea::placeholder {
   color: rgba(255, 255, 255, 0.42);
+}
+
+.professional-form-error {
+  margin: 0;
+  color: #ffbf3c;
+  font-size: 0.82rem;
+  font-weight: 800;
+  line-height: 1.4;
 }
 
 .professional-form .solid-button {

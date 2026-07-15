@@ -16,6 +16,16 @@ npm run dev
 - `npm run lint`: roda a checagem de código com ESLint.
 - `npm run preview`: serve a build localmente para revisão.
 
+## Supabase
+
+Os cadastros de profissionais do reino usam a tabela `kingdom_professionals`.
+
+1. Crie um projeto no Supabase.
+2. Rode o SQL de `supabase/kingdom_professionals.sql` no SQL Editor do Supabase.
+3. Copie `.env.example` para `.env.local`.
+4. Preencha `VITE_SUPABASE_URL` e `VITE_SUPABASE_ANON_KEY` com os dados do projeto.
+5. Configure essas mesmas variáveis no ambiente de produção.
+
 ## Conteúdo para personalizar
 
 Os textos, horários, links de redes sociais e blocos da página ficam em `src/App.jsx`.
