@@ -664,6 +664,25 @@
   font-size: 0.65rem;
 }
 
+.event-card.resignificar-event img {
+  object-position: center;
+}
+
+.event-card.resignificar-event .card-shade {
+  background:
+    linear-gradient(90deg, rgba(1, 8, 22, 0.93), rgba(3, 18, 49, 0.46)),
+    linear-gradient(0deg, rgba(8, 8, 16, 0.84), rgba(8, 8, 16, 0.08) 70%);
+}
+
+.event-card.resignificar-event strong {
+  color: #f4c76a;
+}
+
+.event-card.resignificar-event a {
+  border-color: rgba(244, 199, 106, 0.78);
+  color: #f8d889;
+}
+
 .instagram-section {
   padding-top: 32px;
   border-top: 1px solid rgba(255, 255, 255, 0.08);

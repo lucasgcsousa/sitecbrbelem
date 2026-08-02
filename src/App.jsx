@@ -12,9 +12,8 @@ import {
 } from 'lucide-react'
 import aboutVideoThumb from './assets/about-video-thumb.jpg'
 import churchLogo from './assets/cbr-barao-logo.svg'
-import congressoFamiliasImage from './assets/congresso-familias.jpg'
-import incendeiaImage from './assets/incendeia-2026.jpg'
 import heroImage from './assets/worship-service.jpg'
+import resignificarImage from './assets/imersao-ressignificar.jpeg'
 import revoLogo from './assets/revo-tecnologia-logo.png'
 import instagramPost1 from './assets/instagram-post-1.jpg'
 import instagramPost2 from './assets/instagram-post-2.jpg'
@@ -45,28 +44,12 @@ const worshipCards = [
 
 const eventCards = [
   {
-    title: 'EBF Restaura Kids',
-    date: '27 Jun • 8h30',
-    text: 'Pequenos jogadores, grandes campeões em Cristo.',
-    image: ebfImage,
-    tone: 'kids-event',
-    href: 'https://wa.me/5591984971018',
-  },
-  {
-    title: 'Congresso de famílias',
-    date: '06 e 07 Jun',
-    text: 'Uma família restaurando famílias.',
-    image: congressoFamiliasImage,
-    tone: 'family-event',
-    href: 'https://wa.me/5591984971018',
-  },
-  {
-    title: 'Incendeia 2026',
-    date: '04 e 05 Abr',
-    text: 'Uma geração fervorosa servindo ao Senhor.',
-    image: incendeiaImage,
-    tone: 'fire-event',
-    href: 'https://wa.me/5591984971018',
+    title: 'Imersão Ressignificar',
+    date: '17 e 18 Out 2026',
+    text: 'Preenchendo a lacuna entre o saber e o fazer.',
+    image: resignificarImage,
+    tone: 'resignificar-event',
+    href: 'https://jim.com/a/institutocia',
   },
 ]
 
