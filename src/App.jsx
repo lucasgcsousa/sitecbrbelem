@@ -15,16 +15,7 @@ import churchLogo from './assets/cbr-barao-logo.svg'
 import heroImage from './assets/worship-service.jpg'
 import resignificarImage from './assets/imersao-ressignificar.jpeg'
 import revoLogo from './assets/revo-tecnologia-logo.png'
-import instagramPost1 from './assets/instagram-post-1.jpg'
-import instagramPost2 from './assets/instagram-post-2.jpg'
-import instagramPost3 from './assets/instagram-post-3.jpg'
-import ebfImage from './assets/instagram-post-5.jpg'
-import instagramPost4 from './assets/instagram-post-4.jpg'
-import instagramPost6 from './assets/instagram-post-6.jpg'
-import youtubeMessage1 from './assets/youtube-message-1.jpg'
-import youtubeMessage2 from './assets/youtube-message-2.jpg'
-import youtubeMessage3 from './assets/youtube-message-3.jpg'
-import youtubeMessage4 from './assets/youtube-message-4.jpg'
+import socialMedia from './data/socialMedia.json'
 import { isSupabaseConfigured, supabase } from './supabaseClient'
 import './App.css'
 
@@ -104,77 +95,8 @@ function mapSupabaseProfessional(professional) {
   }
 }
 
-const youtubeMessages = [
-  {
-    image: youtubeMessage1,
-    url: 'https://www.youtube.com/watch?v=5fNEux0CT7w',
-    date: '05 jul',
-    title: 'Conexão Brasas - Comunidade Batista da Restauração',
-  },
-  {
-    image: youtubeMessage2,
-    url: 'https://www.youtube.com/watch?v=Vtc9FJlx9Nk',
-    date: '05 jul',
-    title: 'Culto da Família | CBR Barão 05/07/2026',
-  },
-  {
-    image: youtubeMessage3,
-    url: 'https://www.youtube.com/watch?v=wjDvQt1w980',
-    date: '05 jul',
-    title: 'Culto da Família | Comunidade Batista da Restauração',
-  },
-  {
-    image: youtubeMessage4,
-    url: 'https://www.youtube.com/watch?v=A-8dbvURPT0',
-    date: '04 jul',
-    title: 'Culto de Mulheres | CBR Barão',
-  },
-]
-
-const instagramPosts = [
-  {
-    image: instagramPost1,
-    url: 'https://www.instagram.com/p/DabOgqjlsbD/',
-    date: '05 jul',
-    type: 'Post',
-    title: 'Manhã de adoração e Santa Ceia',
-  },
-  {
-    image: instagramPost2,
-    url: 'https://www.instagram.com/p/DaVAlGJkYqD/',
-    date: '03 jul',
-    type: 'Post',
-    title: 'Quarta Profética de mulheres',
-  },
-  {
-    image: instagramPost3,
-    url: 'https://www.instagram.com/p/DaP6bFzFnki/',
-    date: '01 jul',
-    type: 'Post',
-    title: 'Culto em horário especial',
-  },
-  {
-    image: instagramPost4,
-    url: 'https://www.instagram.com/reel/DaLG-4jRvZI/',
-    date: '29 jun',
-    type: 'Reel',
-    title: 'EBF 2026 - Restaura Kids',
-  },
-  {
-    image: ebfImage,
-    url: 'https://www.instagram.com/p/DaKtZK4Fmhw/',
-    date: '29 jun',
-    type: 'Post',
-    title: 'Pequenos campeões em Cristo',
-  },
-  {
-    image: instagramPost6,
-    url: 'https://www.instagram.com/p/DaBHzNJkeaE/',
-    date: '25 jun',
-    type: 'Post',
-    title: 'Uma casa para pertencer',
-  },
-]
+const youtubeMessages = socialMedia.youtubeMessages
+const instagramPosts = socialMedia.instagramPosts
 
 function Logo() {
   return (

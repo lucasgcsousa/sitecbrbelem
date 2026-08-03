@@ -1,0 +1,72 @@
+{
+  "youtubeMessages": [
+    {
+      "image": "https://i2.ytimg.com/vi/MiMUnYX2Evk/hqdefault.jpg",
+      "url": "https://www.youtube.com/watch?v=MiMUnYX2Evk",
+      "date": "27 jul",
+      "title": "CULTO DA FAMÍLIA | CBR BARÃO 26/07/2026"
+    },
+    {
+      "image": "https://i3.ytimg.com/vi/Bx6t4GfmUeY/hqdefault.jpg",
+      "url": "https://www.youtube.com/watch?v=Bx6t4GfmUeY",
+      "date": "26 jul",
+      "title": "QUARTA PROFÉTICA | CBR BARÃO 22/07/2026"
+    },
+    {
+      "image": "https://i4.ytimg.com/vi/O32A_RwMJyI/hqdefault.jpg",
+      "url": "https://www.youtube.com/watch?v=O32A_RwMJyI",
+      "date": "19 jul",
+      "title": "CULTO DA FAMILÍA | CBR BARÃO 19/07/2026"
+    },
+    {
+      "image": "https://i1.ytimg.com/vi/lBmE2L1G8BI/hqdefault.jpg",
+      "url": "https://www.youtube.com/watch?v=lBmE2L1G8BI",
+      "date": "19 jul",
+      "title": "QUARTA PROFÉTICA | CBR BARÃO 15/07/2026"
+    }
+  ],
+  "instagramPosts": [
+    {
+      "image": "/social/instagram-post-1.jpg",
+      "url": "https://www.instagram.com/p/DabOgqjlsbD/",
+      "date": "05 jul",
+      "type": "Post",
+      "title": "Manhã de adoração e Santa Ceia"
+    },
+    {
+      "image": "/social/instagram-post-2.jpg",
+      "url": "https://www.instagram.com/p/DaVAlGJkYqD/",
+      "date": "03 jul",
+      "type": "Post",
+      "title": "Quarta Profética de mulheres"
+    },
+    {
+      "image": "/social/instagram-post-3.jpg",
+      "url": "https://www.instagram.com/p/DaP6bFzFnki/",
+      "date": "01 jul",
+      "type": "Post",
+      "title": "Culto em horário especial"
+    },
+    {
+      "image": "/social/instagram-post-4.jpg",
+      "url": "https://www.instagram.com/reel/DaLG-4jRvZI/",
+      "date": "29 jun",
+      "type": "Reel",
+      "title": "EBF 2026 - Restaura Kids"
+    },
+    {
+      "image": "/social/instagram-post-5.jpg",
+      "url": "https://www.instagram.com/p/DaKtZK4Fmhw/",
+      "date": "29 jun",
+      "type": "Post",
+      "title": "Pequenos campeões em Cristo"
+    },
+    {
+      "image": "/social/instagram-post-6.jpg",
+      "url": "https://www.instagram.com/p/DaBHzNJkeaE/",
+      "date": "25 jun",
+      "type": "Post",
+      "title": "Uma casa para pertencer"
+    }
+  ]
+}
