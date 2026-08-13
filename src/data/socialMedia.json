@@ -1,6 +1,18 @@
 {
   "youtubeMessages": [
     {
+      "image": "https://i4.ytimg.com/vi/_FcHo-wr-FU/hqdefault.jpg",
+      "url": "https://www.youtube.com/watch?v=_FcHo-wr-FU",
+      "date": "12 ago",
+      "title": "QUARTA PROFÉTICA - CBR BARÃO 12/08/2026"
+    },
+    {
+      "image": "https://i4.ytimg.com/vi/K57pvuiv9GM/hqdefault.jpg",
+      "url": "https://www.youtube.com/watch?v=K57pvuiv9GM",
+      "date": "12 ago",
+      "title": "QUARTA PROFÉTICA - CBR BARÃO 06/05/26o"
+    },
+    {
       "image": "https://i1.ytimg.com/vi/TuXWmOl3kRQ/hqdefault.jpg",
       "url": "https://www.youtube.com/watch?v=TuXWmOl3kRQ",
       "date": "06 ago",
@@ -11,18 +23,6 @@
       "url": "https://www.youtube.com/watch?v=66mrqqba5XM",
       "date": "05 ago",
       "title": "CULTO DE FAMÍLIA  | CBR BARÃO 02/08/2026"
-    },
-    {
-      "image": "https://i3.ytimg.com/vi/6IDecF3nrtg/hqdefault.jpg",
-      "url": "https://www.youtube.com/watch?v=6IDecF3nrtg",
-      "date": "05 ago",
-      "title": "QUARTA PROFÉTICA  | CBR BARÃO 29/07/2026"
-    },
-    {
-      "image": "https://i2.ytimg.com/vi/MiMUnYX2Evk/hqdefault.jpg",
-      "url": "https://www.youtube.com/watch?v=MiMUnYX2Evk",
-      "date": "27 jul",
-      "title": "CULTO DA FAMÍLIA | CBR BARÃO 26/07/2026"
     }
   ],
   "instagramPosts": [
