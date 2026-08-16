@@ -12,6 +12,7 @@ import {
 } from 'lucide-react'
 import aboutVideoThumb from './assets/about-video-thumb.jpg'
 import churchLogo from './assets/cbr-barao-logo.svg'
+import theologyImage from './assets/formacao-teologia.jpeg'
 import heroImage from './assets/worship-service.jpg'
 import resignificarImage from './assets/imersao-ressignificar.jpeg'
 import revoLogo from './assets/revo-tecnologia-logo.png'
@@ -41,6 +42,14 @@ const eventCards = [
     image: resignificarImage,
     tone: 'resignificar-event',
     href: 'https://jim.com/a/institutocia',
+  },
+  {
+    title: 'Formação em Teologia',
+    date: 'Curso online',
+    text: 'Bíblia, doutrina e ministério. Matrículas abertas.',
+    image: theologyImage,
+    tone: 'theology-event',
+    href: 'https://pay.hotmart.com/N107166480J?off=40wzumwp',
   },
 ]
 
