@@ -38,6 +38,14 @@ const worshipCards = [
 
 const eventCards = [
   {
+    title: 'Chá de Mulheres',
+    date: '29 Ago | 16h',
+    text: 'Chamadas para florescer. Um encontro especial de comunhão e renovação.',
+    image: womenTeaCardImage,
+    tone: 'women-tea-event',
+    action: 'womenTea',
+  },
+  {
     title: 'Imersão Ressignificar',
     date: '17 e 18 Out 2026',
     text: 'Preenchendo a lacuna entre o saber e o fazer.',
@@ -52,14 +60,6 @@ const eventCards = [
     image: theologyImage,
     tone: 'theology-event',
     href: 'https://hotm.io/wIG16FF',
-  },
-  {
-    title: 'Chá de Mulheres',
-    date: '29 Ago | 16h',
-    text: 'Chamadas para florescer. Um encontro especial de comunhão e renovação.',
-    image: womenTeaCardImage,
-    tone: 'women-tea-event',
-    action: 'womenTea',
   },
 ]
 

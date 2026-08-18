@@ -657,15 +657,23 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 34px;
+  width: 128px;
+  height: 34px;
   margin-top: 16px;
   padding: 0 16px;
   border: 1px solid rgba(255, 255, 255, 0.7);
   border-radius: 7px;
+  appearance: none;
   color: #fff;
   background: transparent;
   cursor: pointer;
+  font-family: inherit;
   font-size: 0.65rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  text-decoration: none;
+  text-transform: uppercase;
 }
 
 .event-card.resignificar-event img {
@@ -718,11 +726,6 @@
 
 .event-card.women-tea-event strong {
   color: #ff9cca;
-}
-
-.event-card.women-tea-event button {
-  border-color: rgba(255, 156, 202, 0.78);
-  color: #ffc2de;
 }
 
 .event-image-panel {
