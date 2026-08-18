@@ -652,7 +652,8 @@
   font-size: 1.35rem;
 }
 
-.event-card a {
+.event-card a,
+.event-card button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -661,6 +662,9 @@
   padding: 0 16px;
   border: 1px solid rgba(255, 255, 255, 0.7);
   border-radius: 7px;
+  color: #fff;
+  background: transparent;
+  cursor: pointer;
   font-size: 0.65rem;
 }
 
@@ -700,6 +704,33 @@
 .event-card.theology-event a {
   border-color: rgba(217, 169, 79, 0.78);
   color: #f2cc83;
+}
+
+.event-card.women-tea-event img {
+  object-position: center 32%;
+}
+
+.event-card.women-tea-event .card-shade {
+  background:
+    linear-gradient(90deg, rgba(54, 5, 42, 0.9), rgba(214, 24, 100, 0.26)),
+    linear-gradient(0deg, rgba(8, 8, 16, 0.82), rgba(8, 8, 16, 0.04) 70%);
+}
+
+.event-card.women-tea-event strong {
+  color: #ff9cca;
+}
+
+.event-card.women-tea-event button {
+  border-color: rgba(255, 156, 202, 0.78);
+  color: #ffc2de;
+}
+
+.event-image-panel {
+  width: min(760px, 100%);
+}
+
+.event-image-wrap {
+  background: #160915;
 }
 
 .instagram-section {

@@ -12,6 +12,8 @@ import {
 } from 'lucide-react'
 import aboutVideoThumb from './assets/about-video-thumb.jpg'
 import churchLogo from './assets/cbr-barao-logo.svg'
+import womenTeaCardImage from './assets/cha-de-mulheres-card.jpg'
+import womenTeaInfoImage from './assets/cha-de-mulheres-info.jpg'
 import theologyImage from './assets/formacao-teologia.jpeg'
 import heroImage from './assets/worship-service.jpg'
 import resignificarImage from './assets/imersao-ressignificar.jpeg'
@@ -50,6 +52,14 @@ const eventCards = [
     image: theologyImage,
     tone: 'theology-event',
     href: 'https://hotm.io/wIG16FF',
+  },
+  {
+    title: 'Chá de Mulheres',
+    date: '29 Ago | 16h',
+    text: 'Chamadas para florescer. Um encontro especial de comunhão e renovação.',
+    image: womenTeaCardImage,
+    tone: 'women-tea-event',
+    action: 'womenTea',
   },
 ]
 
@@ -129,6 +139,7 @@ function App() {
   const [isGenerosityOpen, setIsGenerosityOpen] = useState(false)
   const [isEntrepreneursOpen, setIsEntrepreneursOpen] = useState(false)
   const [isProfessionalFormOpen, setIsProfessionalFormOpen] = useState(false)
+  const [isWomenTeaOpen, setIsWomenTeaOpen] = useState(false)
   const [professionals, setProfessionals] = useState(() => (isSupabaseConfigured ? [] : getStoredProfessionals()))
   const [professionalForm, setProfessionalForm] = useState(emptyProfessionalForm)
   const [professionalFormError, setProfessionalFormError] = useState('')
@@ -392,7 +403,11 @@ function App() {
                   <h3>{event.title}</h3>
                   <strong>{event.date}</strong>
                   <p>{event.text}</p>
-                  <a href={event.href ?? '#eventos'} target={event.href ? '_blank' : undefined} rel={event.href ? 'noreferrer' : undefined}>Saiba mais</a>
+                  {event.action === 'womenTea' ? (
+                    <button type="button" onClick={() => setIsWomenTeaOpen(true)} aria-haspopup="dialog" aria-expanded={isWomenTeaOpen}>Saiba mais</button>
+                  ) : (
+                    <a href={event.href ?? '#eventos'} target={event.href ? '_blank' : undefined} rel={event.href ? 'noreferrer' : undefined}>Saiba mais</a>
+                  )}
                 </ImageCard>
               ))}
             </div>
@@ -568,6 +583,26 @@ function App() {
                   ))}
                 </div>
               )}
+            </div>
+          </div>
+        </div>
+      )}
+
+      {isWomenTeaOpen && (
+        <div className="pdf-modal event-image-modal" role="dialog" aria-modal="true" aria-label="Chá de Mulheres" onClick={() => setIsWomenTeaOpen(false)}>
+          <div className="pdf-modal-panel event-image-panel" onClick={(event) => event.stopPropagation()}>
+            <div className="pdf-modal-header">
+              <div>
+                <span>Evento</span>
+                <h2>Chá de Mulheres</h2>
+              </div>
+              <button type="button" onClick={() => setIsWomenTeaOpen(false)} aria-label="Fechar popup">
+                <X size={20} />
+              </button>
+            </div>
+
+            <div className="pdf-image-wrap event-image-wrap">
+              <img src={womenTeaInfoImage} alt="Informações do Chá de Mulheres" />
             </div>
           </div>
         </div>
