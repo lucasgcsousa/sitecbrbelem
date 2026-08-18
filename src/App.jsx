@@ -49,7 +49,7 @@ const eventCards = [
     text: 'Bíblia, doutrina e ministério. Matrículas abertas.',
     image: theologyImage,
     tone: 'theology-event',
-    href: 'https://pay.hotmart.com/N107166480J?off=40wzumwp',
+    href: 'https://hotm.io/wIG16FF',
   },
 ]
 
