@@ -454,6 +454,16 @@
   background: #11151f;
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
 .image-card img {
   position: absolute;
   inset: 0;
@@ -726,6 +736,45 @@
 
 .event-card.women-tea-event strong {
   color: #ff9cca;
+}
+
+.event-card.couples-event img {
+  object-position: center;
+}
+
+.event-card.couples-event .card-shade {
+  background:
+    linear-gradient(90deg, rgba(54, 4, 4, 0.92), rgba(163, 19, 19, 0.34)),
+    linear-gradient(0deg, rgba(8, 8, 16, 0.86), rgba(8, 8, 16, 0.04) 70%);
+}
+
+.event-card.couples-event strong {
+  color: #ff8b82;
+}
+
+.event-card.couples-event a {
+  border-color: rgba(255, 139, 130, 0.78);
+  color: #ffaaa3;
+}
+
+.event-card.couples-poster-event {
+  aspect-ratio: 1;
+  min-height: 0;
+  background: #280706;
+}
+
+.event-card.couples-poster-event img {
+  object-position: center;
+  filter: saturate(1.04) contrast(1.02);
+}
+
+.event-card.couples-poster-event .card-shade {
+  background: linear-gradient(0deg, rgba(8, 8, 16, 0.1), transparent 38%);
+}
+
+.event-card.couples-poster-event .image-card-content {
+  min-height: 100%;
+  padding: 0;
 }
 
 .event-image-panel {

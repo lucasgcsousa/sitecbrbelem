@@ -12,6 +12,7 @@ import {
 } from 'lucide-react'
 import aboutVideoThumb from './assets/about-video-thumb.jpg'
 import churchLogo from './assets/cbr-barao-logo.svg'
+import couplesEventImage from './assets/culto-de-casais-card.png'
 import womenTeaCardImage from './assets/cha-de-mulheres-card.jpg'
 import womenTeaInfoImage from './assets/cha-de-mulheres-info.jpg'
 import theologyImage from './assets/formacao-teologia.jpeg'
@@ -37,6 +38,16 @@ const worshipCards = [
 ]
 
 const eventCards = [
+  {
+    title: 'Culto de Casais',
+    date: '22 Ago | Sábado | 19h',
+    text: 'Nossa história até aqui.',
+    image: couplesEventImage,
+    imageAlt: 'Culto de Casais - Nossa historia ate aqui - 22.08, sabado, 19h',
+    tone: 'couples-event couples-poster-event',
+    href: '#eventos',
+    layout: 'poster',
+  },
   {
     title: 'Chá de Mulheres',
     date: '29 Ago | 16h',
@@ -125,10 +136,10 @@ function Logo() {
   )
 }
 
-function ImageCard({ children, className = '', image = heroImage }) {
+function ImageCard({ children, className = '', image = heroImage, imageAlt = '' }) {
   return (
     <article className={`image-card ${className}`}>
-      <img src={image} alt="" />
+      <img src={image} alt={imageAlt} />
       <div className="card-shade" />
       <div className="image-card-content">{children}</div>
     </article>
@@ -399,14 +410,20 @@ function App() {
 
             <div className="event-grid">
               {eventCards.map((event, index) => (
-                <ImageCard className={`event-card event-${index + 1} ${event.tone ?? ''}`} image={event.image} key={event.title}>
-                  <h3>{event.title}</h3>
-                  <strong>{event.date}</strong>
-                  <p>{event.text}</p>
-                  {event.action === 'womenTea' ? (
-                    <button type="button" onClick={() => setIsWomenTeaOpen(true)} aria-haspopup="dialog" aria-expanded={isWomenTeaOpen}>Saiba mais</button>
+                <ImageCard className={`event-card event-${index + 1} ${event.tone ?? ''}`} image={event.image} imageAlt={event.imageAlt} key={event.title}>
+                  {event.layout === 'poster' ? (
+                    <span className="visually-hidden">{`${event.title} - ${event.date} - ${event.text}`}</span>
                   ) : (
-                    <a href={event.href ?? '#eventos'} target={event.href ? '_blank' : undefined} rel={event.href ? 'noreferrer' : undefined}>Saiba mais</a>
+                    <>
+                      <h3>{event.title}</h3>
+                      <strong>{event.date}</strong>
+                      <p>{event.text}</p>
+                      {event.action === 'womenTea' ? (
+                        <button type="button" onClick={() => setIsWomenTeaOpen(true)} aria-haspopup="dialog" aria-expanded={isWomenTeaOpen}>Saiba mais</button>
+                      ) : (
+                        <a href={event.href ?? '#eventos'} target={event.href ? '_blank' : undefined} rel={event.href ? 'noreferrer' : undefined}>Saiba mais</a>
+                      )}
+                    </>
                   )}
                 </ImageCard>
               ))}
