@@ -1,6 +1,12 @@
 {
   "youtubeMessages": [
     {
+      "image": "https://i2.ytimg.com/vi/eMfcq7YQnKg/hqdefault.jpg",
+      "url": "https://www.youtube.com/watch?v=eMfcq7YQnKg",
+      "date": "27 ago",
+      "title": "PROJETO RESTAURA VIDAS"
+    },
+    {
       "image": "https://i4.ytimg.com/vi/_FcHo-wr-FU/hqdefault.jpg",
       "url": "https://www.youtube.com/watch?v=_FcHo-wr-FU",
       "date": "13 ago",
@@ -17,12 +23,6 @@
       "url": "https://www.youtube.com/watch?v=TuXWmOl3kRQ",
       "date": "06 ago",
       "title": "QUARTA PROFÉTICA - CBR BARÃO 05/05/26o"
-    },
-    {
-      "image": "https://i3.ytimg.com/vi/66mrqqba5XM/hqdefault.jpg",
-      "url": "https://www.youtube.com/watch?v=66mrqqba5XM",
-      "date": "05 ago",
-      "title": "CULTO DE FAMÍLIA  | CBR BARÃO 02/08/2026"
     }
   ],
   "instagramPosts": [
