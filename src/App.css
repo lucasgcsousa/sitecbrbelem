@@ -623,6 +623,23 @@
   color: rgba(255, 255, 255, 0.78);
 }
 
+.social-projects-block {
+  grid-template-columns: minmax(320px, 1.1fr) minmax(280px, 0.9fr);
+}
+
+.social-projects-block .about-photo {
+  max-width: none;
+}
+
+.social-projects-copy span {
+  color: #54d0a7;
+}
+
+.social-projects-copy h2,
+.social-projects-copy p {
+  max-width: 520px;
+}
+
 .right-pane {
   width: 100%;
   margin: 0 auto;
@@ -738,45 +755,6 @@
   color: #ff9cca;
 }
 
-.event-card.couples-event img {
-  object-position: center;
-}
-
-.event-card.couples-event .card-shade {
-  background:
-    linear-gradient(90deg, rgba(54, 4, 4, 0.92), rgba(163, 19, 19, 0.34)),
-    linear-gradient(0deg, rgba(8, 8, 16, 0.86), rgba(8, 8, 16, 0.04) 70%);
-}
-
-.event-card.couples-event strong {
-  color: #ff8b82;
-}
-
-.event-card.couples-event a {
-  border-color: rgba(255, 139, 130, 0.78);
-  color: #ffaaa3;
-}
-
-.event-card.couples-poster-event {
-  aspect-ratio: 1;
-  min-height: 0;
-  background: #280706;
-}
-
-.event-card.couples-poster-event img {
-  object-position: center;
-  filter: saturate(1.04) contrast(1.02);
-}
-
-.event-card.couples-poster-event .card-shade {
-  background: linear-gradient(0deg, rgba(8, 8, 16, 0.1), transparent 38%);
-}
-
-.event-card.couples-poster-event .image-card-content {
-  min-height: 100%;
-  padding: 0;
-}
-
 .event-image-panel {
   width: min(760px, 100%);
 }
@@ -787,7 +765,6 @@
 
 .instagram-section {
   padding-top: 32px;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .instagram-strip {

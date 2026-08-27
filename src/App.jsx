@@ -12,7 +12,6 @@ import {
 } from 'lucide-react'
 import aboutVideoThumb from './assets/about-video-thumb.jpg'
 import churchLogo from './assets/cbr-barao-logo.svg'
-import couplesEventImage from './assets/culto-de-casais-card.png'
 import womenTeaCardImage from './assets/cha-de-mulheres-card.jpg'
 import womenTeaInfoImage from './assets/cha-de-mulheres-info.jpg'
 import theologyImage from './assets/formacao-teologia.jpeg'
@@ -38,16 +37,6 @@ const worshipCards = [
 ]
 
 const eventCards = [
-  {
-    title: 'Culto de Casais',
-    date: '22 Ago | Sábado | 19h',
-    text: 'Nossa história até aqui.',
-    image: couplesEventImage,
-    imageAlt: 'Culto de Casais - Nossa historia ate aqui - 22.08, sabado, 19h',
-    tone: 'couples-event couples-poster-event',
-    href: '#eventos',
-    layout: 'poster',
-  },
   {
     title: 'Chá de Mulheres',
     date: '29 Ago | 16h',
@@ -427,6 +416,30 @@ function App() {
                   )}
                 </ImageCard>
               ))}
+            </div>
+          </section>
+
+          <section className="about-block social-projects-block" id="projetos-sociais">
+            <div className="about-photo">
+              <video
+                controls
+                playsInline
+                poster="/projeto-restaura-vidas-poster.jpg"
+                preload="metadata"
+                onLoadedMetadata={(event) => {
+                  event.currentTarget.muted = false
+                  event.currentTarget.volume = 1
+                }}
+              >
+                <source src="/projeto-restaura-vidas.mp4" type="video/mp4" />
+              </video>
+            </div>
+            <div className="about-copy social-projects-copy">
+              <span>Projetos Sociais</span>
+              <h2>Projeto Restaura Vidas</h2>
+              <p>
+                Ações de cuidado, acolhimento e serviço que levam esperança para famílias da nossa cidade.
+              </p>
             </div>
           </section>
 
