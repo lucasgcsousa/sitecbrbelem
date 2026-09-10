@@ -1,6 +1,12 @@
 {
   "youtubeMessages": [
     {
+      "image": "https://i1.ytimg.com/vi/DsD8p9mxo6I/hqdefault.jpg",
+      "url": "https://www.youtube.com/watch?v=DsD8p9mxo6I",
+      "date": "09 set",
+      "title": "QUARTA PROFÉTICA - CBR BARÃO 09/09/2026"
+    },
+    {
       "image": "https://i3.ytimg.com/vi/VArBEMe6LYo/hqdefault.jpg",
       "url": "https://www.youtube.com/watch?v=VArBEMe6LYo",
       "date": "31 ago",
@@ -17,12 +23,6 @@
       "url": "https://www.youtube.com/watch?v=lUDcQTztQ2I",
       "date": "31 ago",
       "title": "CONEXÃO BRASAS - IGREJA DE ESMIRNA"
-    },
-    {
-      "image": "https://i4.ytimg.com/vi/kn90PzVojP4/hqdefault.jpg",
-      "url": "https://www.youtube.com/watch?v=kn90PzVojP4",
-      "date": "31 ago",
-      "title": "QUARTA PROFÉTICA - PALAVRA PR. ANDERSON CARLOS -  CBR BARÃO"
     }
   ],
   "instagramPosts": [
