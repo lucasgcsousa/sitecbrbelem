@@ -41,7 +41,7 @@ const eventCards = [
     text: 'Preenchendo a lacuna entre o saber e o fazer.',
     image: resignificarImage,
     tone: 'resignificar-event',
-    href: 'https://jim.com/a/institutocia',
+    action: 'resignificarVideo',
   },
   {
     title: 'Formação em Teologia',
@@ -129,6 +129,7 @@ function App() {
   const [isGenerosityOpen, setIsGenerosityOpen] = useState(false)
   const [isEntrepreneursOpen, setIsEntrepreneursOpen] = useState(false)
   const [isProfessionalFormOpen, setIsProfessionalFormOpen] = useState(false)
+  const [isResignificarOpen, setIsResignificarOpen] = useState(false)
   const [professionals, setProfessionals] = useState(() => (isSupabaseConfigured ? [] : getStoredProfessionals()))
   const [professionalForm, setProfessionalForm] = useState(emptyProfessionalForm)
   const [professionalFormError, setProfessionalFormError] = useState('')
@@ -396,7 +397,11 @@ function App() {
                       <h3>{event.title}</h3>
                       <strong>{event.date}</strong>
                       <p>{event.text}</p>
-                      <a href={event.href ?? '#eventos'} target={event.href ? '_blank' : undefined} rel={event.href ? 'noreferrer' : undefined}>Saiba mais</a>
+                      {event.action === 'resignificarVideo' ? (
+                        <button type="button" onClick={() => setIsResignificarOpen(true)} aria-haspopup="dialog" aria-expanded={isResignificarOpen}>Saiba mais</button>
+                      ) : (
+                        <a href={event.href ?? '#eventos'} target={event.href ? '_blank' : undefined} rel={event.href ? 'noreferrer' : undefined}>Saiba mais</a>
+                      )}
                     </>
                   )}
                 </ImageCard>
@@ -551,6 +556,32 @@ function App() {
 
             <div className="pdf-image-wrap">
               <img src="/generosidade-render.png" alt="Exerça sua generosidade" />
+            </div>
+          </div>
+        </div>
+      )}
+
+      {isResignificarOpen && (
+        <div className="pdf-modal resignificar-modal" role="dialog" aria-modal="true" aria-label="Imersão Ressignificar" onClick={() => setIsResignificarOpen(false)}>
+          <div className="pdf-modal-panel resignificar-modal-panel" onClick={(event) => event.stopPropagation()}>
+            <div className="pdf-modal-header">
+              <div>
+                <span>Evento</span>
+                <h2>Imersão Ressignificar</h2>
+              </div>
+              <button type="button" onClick={() => setIsResignificarOpen(false)} aria-label="Fechar popup">
+                <X size={20} />
+              </button>
+            </div>
+
+            <div className="resignificar-video-body">
+              <video controls playsInline preload="metadata">
+                <source src="/video-resignificar.mp4" type="video/mp4" />
+              </video>
+
+              <a className="resignificar-register-button" href="https://jim.com/a/institutocia" target="_blank" rel="noreferrer">
+                INSCREVA-SE
+              </a>
             </div>
           </div>
         </div>

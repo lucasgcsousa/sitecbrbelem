@@ -717,7 +717,8 @@
   color: #f4c76a;
 }
 
-.event-card.resignificar-event a {
+.event-card.resignificar-event a,
+.event-card.resignificar-event button {
   border-color: rgba(244, 199, 106, 0.78);
   color: #f8d889;
 }
@@ -1237,6 +1238,51 @@
   display: block;
   width: 100%;
   height: auto;
+}
+
+.resignificar-modal-panel {
+  width: min(760px, 100%);
+  height: auto;
+  max-height: 92vh;
+}
+
+.resignificar-video-body {
+  display: grid;
+  gap: 18px;
+  justify-items: center;
+  overflow: auto;
+  padding: 20px;
+  background: #07101b;
+}
+
+.resignificar-video-body video {
+  display: block;
+  width: 100%;
+  max-height: 68vh;
+  border-radius: 10px;
+  background: #000;
+}
+
+.resignificar-register-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 190px;
+  height: 44px;
+  padding: 0 24px;
+  border: 1px solid rgba(244, 199, 106, 0.86);
+  border-radius: 7px;
+  color: #111827;
+  background: #f4c76a;
+  font-size: 0.78rem;
+  font-weight: 950;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+}
+
+.resignificar-register-button:hover,
+.resignificar-register-button:focus-visible {
+  background: #f8d889;
 }
 
 .kingdom-modal .pdf-modal-panel {
