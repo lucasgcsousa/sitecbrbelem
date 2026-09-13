@@ -1,6 +1,18 @@
 {
   "youtubeMessages": [
     {
+      "image": "https://i1.ytimg.com/vi/dZQW2T3MPnM/hqdefault.jpg",
+      "url": "https://www.youtube.com/watch?v=dZQW2T3MPnM",
+      "date": "12 set",
+      "title": "QUARTA PROFÉTICA  | CBR BARÃO 05/08/2026"
+    },
+    {
+      "image": "https://i1.ytimg.com/vi/t1JcsyPnXhg/hqdefault.jpg",
+      "url": "https://www.youtube.com/watch?v=t1JcsyPnXhg",
+      "date": "12 set",
+      "title": "QUARTA PROFÉTICA  -  CBR BARÃO"
+    },
+    {
       "image": "https://i1.ytimg.com/vi/p_O7Gv39zMQ/hqdefault.jpg",
       "url": "https://www.youtube.com/watch?v=p_O7Gv39zMQ",
       "date": "12 set",
@@ -11,18 +23,6 @@
       "url": "https://www.youtube.com/watch?v=rMJJVpeLZlY",
       "date": "12 set",
       "title": "CULTO DA FAMILIA - CBR BARÃO"
-    },
-    {
-      "image": "https://i3.ytimg.com/vi/JNFoJFlHmy8/hqdefault.jpg",
-      "url": "https://www.youtube.com/watch?v=JNFoJFlHmy8",
-      "date": "12 set",
-      "title": "CULTO DA FAMÍLIA - COMUNIDADE BATISTA DA RESTAURAÇÃO"
-    },
-    {
-      "image": "https://i1.ytimg.com/vi/dhEBAaD6caU/hqdefault.jpg",
-      "url": "https://www.youtube.com/watch?v=dhEBAaD6caU",
-      "date": "12 set",
-      "title": "CHÁ DAS MULHERES  -  CBR BARÃO"
     }
   ],
   "instagramPosts": [
