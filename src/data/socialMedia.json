@@ -1,6 +1,12 @@
 {
   "youtubeMessages": [
     {
+      "image": "https://i2.ytimg.com/vi/EXyrqxROODU/hqdefault.jpg",
+      "url": "https://www.youtube.com/watch?v=EXyrqxROODU",
+      "date": "16 out",
+      "title": "CONEXÃO BRASAS  - MISSÕES 09/10/2026"
+    },
+    {
       "image": "https://i1.ytimg.com/vi/4_ee_6GY6I8/hqdefault.jpg",
       "url": "https://www.youtube.com/watch?v=4_ee_6GY6I8",
       "date": "12 out",
@@ -17,12 +23,6 @@
       "url": "https://www.youtube.com/watch?v=XXTCCCRyaCU",
       "date": "10 out",
       "title": "QUARTA PROFÉTICA  14/10/2026"
-    },
-    {
-      "image": "https://i1.ytimg.com/vi/PeyrB4f2Xww/hqdefault.jpg",
-      "url": "https://www.youtube.com/watch?v=PeyrB4f2Xww",
-      "date": "08 out",
-      "title": "CULTO DA FAMÍLIA -  COMUNIDADE BATISTA DA RESTAURAÇÃO"
     }
   ],
   "instagramPosts": [
