@@ -1,6 +1,12 @@
 {
   "youtubeMessages": [
     {
+      "image": "https://i3.ytimg.com/vi/j0QZyOTjmXg/hqdefault.jpg",
+      "url": "https://www.youtube.com/watch?v=j0QZyOTjmXg",
+      "date": "19 out",
+      "title": "CULTO DA FAMILÍA - CBR BARÃO 18/10/2026"
+    },
+    {
       "image": "https://i2.ytimg.com/vi/EXyrqxROODU/hqdefault.jpg",
       "url": "https://www.youtube.com/watch?v=EXyrqxROODU",
       "date": "16 out",
@@ -17,12 +23,6 @@
       "url": "https://www.youtube.com/watch?v=2sE7MIXJt84",
       "date": "12 out",
       "title": "QUARTA PROFÉTICA - CBR BARÃO 06/05/26o"
-    },
-    {
-      "image": "https://i1.ytimg.com/vi/PeyrB4f2Xww/hqdefault.jpg",
-      "url": "https://www.youtube.com/watch?v=PeyrB4f2Xww",
-      "date": "08 out",
-      "title": "CULTO DA FAMÍLIA -  COMUNIDADE BATISTA DA RESTAURAÇÃO"
     }
   ],
   "instagramPosts": [
