@@ -1,6 +1,12 @@
 {
   "youtubeMessages": [
     {
+      "image": "https://i4.ytimg.com/vi/olk0t52SZDk/hqdefault.jpg",
+      "url": "https://www.youtube.com/watch?v=olk0t52SZDk",
+      "date": "05 nov",
+      "title": "QUARTA PROFÉTICA  - CBR BARÃO | 04/ 11/ 26"
+    },
+    {
       "image": "https://i1.ytimg.com/vi/l1Bey4VqTVE/hqdefault.jpg",
       "url": "https://www.youtube.com/watch?v=l1Bey4VqTVE",
       "date": "02 nov",
@@ -17,12 +23,6 @@
       "url": "https://www.youtube.com/watch?v=XXTCCCRyaCU",
       "date": "30 out",
       "title": "CONEXÃO BRASAS 16/10/2026"
-    },
-    {
-      "image": "https://i2.ytimg.com/vi/EjYLwvDm9q4/hqdefault.jpg",
-      "url": "https://www.youtube.com/watch?v=EjYLwvDm9q4",
-      "date": "30 out",
-      "title": "CULTO DA FAMILIA  - CBR BARÃO | 25 / 10 / 26"
     }
   ],
   "instagramPosts": [
